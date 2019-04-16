@@ -11,15 +11,19 @@ Deception is often used by humans to raise the probability of success when negot
 
 Let us assume an encounter between two competing agents, with the possibility of them to use the following deception mechanisms \textit{i.} hidden actions, \textit{ii.} hidden utilities and \textit{iii.} decoy actions. Deception techniques can occur on inter-agent negotiation with incomplete information, as negotiation typically assume trustworthy agents, which is not always the case \cite{inproceedingsa}. As agents co-exist and might interfere with the outcomes of the actions performed, there is the possibility of cooperation, to help each other and achieve both goals with a lower overall cost. Conversely, agents may compete i.e., trying to apply a dominant strategy. Let us assume a bi-matrix \textit{b}, where \textit{agent i} and \textit{agent j} have different goals, g$_i$ and g$_j$, respectively. Both agents want to transform the world from the initial to a state \textit{s$_i$} or \textit{s$_j$} that satisfies its goal. \textit{Agent$_i$} is the row player, and \textit{agent$_j$} the column player. Both players can perform the same actions, \textit{A} and \textit{B}. Deception techniques can be used to maximise the overall utility for one of the agents. Let us admit a game between those agents, with the utilities expressed on the following table:
 
-\begin{game}{2}{2}
+\begin{game}{2}{2}[Agent~i][Agent~j][Game 1]
+\centering
+\label{game}
+
       & $A$     & $B$\\
 $A$   & $3,3$  & $0,2$\\
 $B$   & $2,0$   & $1,1$
+
 \end{game}
 
 Let us suppose that \textit{agent$_i$} knows that \textit{agent$_j$} is going to perform action a. The result yields:
 
-\begin{game}{2}{1}
+\begin{game}{2}{1}[Agent~i][Agent~j][Game 1 - Action A]
       & $A$ \\
 $A$   & $\textbf{3},3$ \\
 $B$   & $\textbf{2},0$  
@@ -27,7 +31,7 @@ $B$   & $\textbf{2},0$
 
 In this case, agent i should also perform action a, because 3 is greater than 2. If  But if agent j is taking action B, we have:
 
-\begin{game}{2}{1}
+\begin{game}{2}{1}[Agent~i][Agent~j][Game 1 - Action B]
       & $B$ \\
 $A$   & $\textbf{0},2$ \\
 $B$   & $\textbf{1},1$  
@@ -35,13 +39,17 @@ $B$   & $\textbf{1},1$
 
 %hidden action
 Therefore, agent i would also choose action B, as 1 is greater than 0. The optimal strategy of agent i is determined by agent j\'s choice. Agent j can inform agent i that he can only take action B (\textit{hidden actions}). This deception mechanism leads agent i to perform action B (as 1 is greater than 0). Nonetheless, agent j can perform action A, yielding utility 3 for him and utility 0 for agent i. 
- With these restrictions, there is no strictly dominant strategy and, therefore, more rules are needed to solve the game. Hidden utility mechanisms are loosely similar to hidden actions. If an agent i does not share its utility associated with each actions, agent j will be picking actions only guided by its utility. Such decisions can lead to sub-optimal options, for instance, when agent j picks action A (utility 3) and agent i picks action B (utility 2 for itself and utility 0 for agent i). 
- 
- 
- Nash equilibrium is a set of strategies for each player, such as each player does not have an incentive to unilaterarly change its own strategy \cite{rh}. Nash equilibria are stable and can help solve the game. In this example there are two nash equilibria: when both agents pick the same action.
+
+%hidden utilities 
+Hidden utility mechanisms are used by agents that do not want to share its utility regarding their actions. If an agent i does not share its utility associated with each actions, agent j will be picking actions only guided by its utility. Such decisions can lead to sub-optimal options, for instance, when agent j picks action A (utility 3) and agent i picks action B (utility 2 for itself and utility 0 for agent i). 
  
  %decoy actions
-Let us now suppose that agent j can only perform \textit{action A}, but is using a \textit{decoy action} mechanism, pretending that he can perform \textit{action B}. Cooperative agents rationally always choose action A, as it nash equilibrium and therefore yields the highest outcome possible. Nonetheless, if agent i is a competing agent that not only aims to maximise its utility, but also aims to minimize its adversary utility (zero-sum game), 
+Let us now suppose that agent j can only perform \textit{action A}, but is using a \textit{decoy action} mechanism, pretending that he can perform \textit{action B}. Cooperative agents rationally always choose action A, as it yields the highest outcome possible. Nonetheless, if agent i is a competing agent that not only aims to maximise its utility, but also aims to minimize its adversary utility (zero-sum game), 
+
+It is clear that an agent can use several deception techniques to maximise its own reward, in a competing scenario. Agents can also use deception in cooperative environments to maximise its utility. In the case 
+
+%nash e pareto
+In scenarios with no strictly dominant strategy, more rules are needed to solve the game. The notion of Nash equilibrium and Pareto Optimality are important to make conclusions. Nash equilibrium is a set of strategies for each player, such as each player does not have an incentive to unilaterarly change its own strategy \cite{rh}. Nash equilibria are stable and can help solve the game. In Game 1, there are two nash equilibria: when both agents pick the same action.
 
 \section{Conclusions}
 This paragraph will end the body of this sample document.
