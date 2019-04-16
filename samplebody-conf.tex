@@ -1,15 +1,14 @@
 %\section{Introduction}
 \section{Agents}
-An agent is a system that tries to fulfill a set of goals in a complex environment. Agents needs to be autonomous and adaptive, in order to cope with the vicissitudes of environments. In a multi-agent scenario, agents can compete, being their interactions described by a game encounter. For maximising the utility, a mathematical function which ranks different options according to their utility to an individual, an agent can use the environment.
+A \textit{rational agent} is a system that tries to fulfil a set of goals in a complex environment, by choosing the action with the optimal expected outcome for itself from among all possible actions. Agents need to be autonomous and adaptive, in order to cope with the vicissitudes of environments. In a multi-agent scenario, agents can compete, being their interactions described by a game encounter. For maximising the utility, a mathematical function which ranks different options according to their utility to an individual, an agent can use the environment. In the other hand, cooperating agents have the same goal, and can work together to achieve a common goal. 
 \section{Game Encounters}
 A game is a competitive activity, where players compete with each other (interactions), according to defined rules (strategy) \cite{aulas}
-. Players can only take certain actions defined by the environment.  Assuming that agents simultaneously choose an action to perform, the result of their actions depends on the combination of actions. The environment is then changed, according to the cumulative set of actions performed by all agents. This fact arises one question: if all agents influence the environment, and if all agents want to maximise their utility, how should they act? The choose of an action has some relevant issues, including but not limited to the nature of the goal (what kind, static or dynamic), scaling up, reusability, the depth of understanding of actions leading to emergent behaviours and the relation between perceptions and actions \cite{Maes:1993:MAA:1668014.1668022}. Game theory studies interactions between rational agents who aim to maximise their utility. Agents can negotiate. An outcome is Pareto efficient if no other
-outcome improves a player’s utility without making someone else worse off \cite{aulas}.
+. Players can only take certain actions defined by the environment.  Assuming that agents simultaneously choose an action to perform, the result of their actions depends on the combination of actions. The environment is then changed, according to the cumulative set of actions performed by all agents. This fact arises one question: if all agents influence the environment, and if all agents want to maximise their utility, how should they act? The choice of the appropriate action has some relevant issues, including but not limited to the nature of the goal (what kind, static or dynamic), reusability, the depth of understanding of actions leading to emergent behaviours and the relationship between perceptions and actions \cite{Maes:1993:MAA:1668014.1668022}. Game theory studies interactions between rational agents who aim to maximise their utility. Agents can negotiate in order to achieve a position favourable to both of them. 
 
 \subsection{Deception Mechanisms}
-Deception is often used by humans to raise the probability of success when negotiating. The ability of an agent to negotiate efficiently in the presence of conflicting goals is related with the information that the adversary holds. 
+Deception is often used by humans to raise the probability of success when negotiating. The ability of an agent to negotiate effectively in the presence of conflicting goals is related to the information that the adversary holds. 
 
-Let us assume an encounter between two competing agents, with the possibility of them to use the following deception mechanisms \textit{i.} hidden actions, \textit{ii.} hidden utilities and \textit{iii.} decoy actions. Deception techniques can occur on inter-agent negotiation with incomplete information, as negotiation typically assume trustworthy agents, which is not always the case \cite{inproceedingsa}. As agents co-exist and might interfere with the outcomes of the actions performed, there is the possibility of cooperation, to help each other and achieve both goals with a lower overall cost. Conversely, agents may compete i.e., trying to apply a dominant strategy. Let us assume a bi-matrix \textit{b}, where \textit{agent i} and \textit{agent j} have different goals, g$_i$ and g$_j$, respectively. Both agents want to transform the world from the initial to a state \textit{s$_i$} or \textit{s$_j$} that satisfies its goal. \textit{Agent$_i$} is the row player, and \textit{agent$_j$} the column player. Both players can perform the same actions, \textit{A} and \textit{B}. Deception techniques can be used to maximise the overall utility for one of the agents. Let us admit a game between those agents, with the utilities expressed on the following table:
+Let us assume an encounter between two competing agents, with the possibility of them to use the following deception mechanisms \textit{i.} hidden actions, \textit{ii.} hidden utilities and \textit{iii.} decoy actions. Deception techniques can occur on inter-agent negotiation with incomplete information, as negotiation typically assume trustworthy agents, which is not always the case \cite{inproceedingsa}. As agents co-exist and might interfere with the outcomes of the actions performed, there is the possibility of cooperation, to help each other and achieve both goals with a lower overall cost. Conversely, agents may compete, i.e., trying to apply a dominant strategy. Let us assume a bi-matrix \textit{b}, where \textit{agent i} and \textit{agent j} have different goals, g$_i$ and g$_j$, respectively. Both agents want to transform the world from the initial to a state \textit{s$_i$} or \textit{s$_j$} that satisfies its goal. \textit{Agent$_i$} is the row player, and \textit{agent$_j$} the column player. Both players can perform the same actions, \textit{A} and \textit{B}. Deception techniques can be used to maximise the overall utility for one of the agents. Let us admit a game between those agents, with the utilities expressed on the following table:
 
 \begin{game}{2}{2}[Agent~i][Agent~j][Game 1]
 \centering
@@ -29,7 +28,7 @@ $A$   & $\textbf{3},3$ \\
 $B$   & $\textbf{2},0$  
 \end{game}
 
-In this case, agent i should also perform action a, because 3 is greater than 2. If  But if agent j is taking action B, we have:
+In this case, \textit{agent i} should also perform the action \textit{A}, because the utility delivered is the greatest. If  But if agent j is taking action \textit{B}, we have:
 
 \begin{game}{2}{1}[Agent~i][Agent~j][Game 1 - Action B]
       & $B$ \\
@@ -38,35 +37,29 @@ $B$   & $\textbf{1},1$
 \end{game}
 
 %hidden action
-Therefore, agent i would also choose action B, as 1 is greater than 0. The optimal strategy of agent i is determined by agent j\'s choice. Agent j can inform agent i that he can only take action B (\textit{hidden actions}). This deception mechanism leads agent i to perform action B (as 1 is greater than 0). Nonetheless, agent j can perform action A, yielding utility 3 for him and utility 0 for agent i. 
+Therefore, \textit{agent i} would also choose action \textit{B}, as one is greater than zero. The optimal strategy of \textit{agent i} is determined by the choice of \textit{agent j}. If \textit{Agent i} informs \textit{agent j} that he can only take action B (\textit{hidden actions}), it leads \textit{agent j} to perform action B (as one is greater than 0). Nonetheless, agent i can perform action A, yielding utility 2 for him and utility 0 for agent i. 
 
 %hidden utilities 
-Hidden utility mechanisms are used by agents that do not want to share its utility regarding their actions. If an agent i does not share its utility associated with each actions, agent j will be picking actions only guided by its utility. Such decisions can lead to sub-optimal options, for instance, when agent j picks action A (utility 3) and agent i picks action B (utility 2 for itself and utility 0 for agent i). 
+Hidden utility mechanisms are used by agents that do not want to share its utility regarding their actions. If an agent i does not share its utility associated with each action, agent j will be picking actions guided by its utility. Such decisions can lead to sub-optimal options, for instance, when agent j picks action A (utility 3) and agent i picks action B (utility 2 for itself and utility 0 for agent i). 
  
  %decoy actions
-Let us now suppose that agent j can only perform \textit{action A}, but is using a \textit{decoy action} mechanism, pretending that he can perform \textit{action B}. Cooperative agents rationally always choose action A, as it yields the highest outcome possible. Nonetheless, if agent i is a competing agent that not only aims to maximise its utility, but also aims to minimize its adversary utility (zero-sum game), 
+Let us now suppose that agent j can only perform \textit{action A}, but is using a \textit{decoy action} mechanism, pretending that he can perform \textit{action B}. Cooperative agents rationally always choose action A, as it yields the highest outcome possible. Nonetheless, if agent i is a competing agent that not only aims to maximise its utility but also aims to minimise its adversary utility (zero-sum game), 
 
-It is clear that an agent can use several deception techniques to maximise its own reward, in a competing scenario. Agents can also use deception in cooperative environments to maximise its utility. In the case of a non-zero sum game, 
+It is clear that an agent can use several deception techniques to maximise its reward, in a competing scenario. Agents can also use deception in cooperative environments to maximise their utility. In the case of a non-zero sum game, 
 
-%nash e pareto
-In scenarios with no strictly dominant strategy, more rules are needed to solve the game. The notion of Nash equilibrium and Pareto Optimality are important to make conclusions. Nash equilibrium is a set of strategies for each player, such as each player does not have an incentive to unilaterally change its own strategy \cite{rh}. Nash equilibria are stable and can help solve the game. In Game 1, there are two nash equilibria: when both agents pick the same action. An outcome is Pareto efficient if no other outcome improves a player´s utility without making someone else worse off \cite{rh}. The impact of deception influences agents, as they believe an outcome is in nash equilibrium or is pareto efficient, when in reality it is not. Let us assime that in Game 1, agent i can only pick action A, but tells agent j that he can pick all actions. Given the nash equilibrium when both agents choose action B, there is room for deception. Agent i choose action A, while agent j chooses action B, yielding 2 utilitiy points for agent i and 0 utility points for j. Conversely, agent i can tell agent j he can not pick B, thus suggesting agent j to always pick A (nash equilibrium). If agent i is competitive, he can pick action B, thus not earning so much utility but, at the same time, minimising the utility of his adversary. Deception can, in fact, give the ellusion of a nash equilibrium. This reasoning is analogoius to pareto optimality. 
+%nash e Pareto
+In scenarios with no strictly dominant strategy, more rules are needed to solve the game. The notion of Nash equilibrium and Pareto Optimality are important to make conclusions. Nash equilibrium is a set of strategies for each player, such as each player does not have an incentive to unilaterally change its strategy \cite{rh}. Nash equilibria are stable and can help solve the game. In Game 1, there are two Nash equilibria: when both agents pick the same action. An outcome is Pareto efficient if no other outcome improves a player´s utility without making someone else worse off \cite{rh}. The impact of deception influences agents, as they believe an outcome is in Nash equilibrium or is Pareto efficient when in reality it is not. Let us assume that in Game 1, agent i can only pick action A, but tells agent j that he can pick all actions. Given the Nash equilibrium when both agents choose action B, there is room for deception. Agent i choose action A, while agent j chooses action B, yielding two utility points for agent i and 0 utility points for j.
+Conversely, agent i can tell agent j he cannot pick B, thus suggesting agent j always to pick A (Nash equilibrium). If agent i is competitive, he can pick action B, thus not earning so much utility but, at the same time, minimising the utility of his adversary. Deception can give the illusion of a Nash equilibrium. This reasoning is analogous to Pareto optimality. 
 
 \section{Conclusions}
-This paragraph will end the body of this sample document.
-Remember that you might still have Acknowledgments or
-Appendices; brief samples of these
-follow.  There is still the Bibliography to deal with; and
-we will make a disclaimer about that here: with the exception
-of the reference to the \LaTeX\ book, the citations in
-this paper are to articles which have nothing to
-do with the present subject and are used as
-examples only.
+
+
 %\end{document}  % This is where a 'short' article might terminate
 
 
 
 
 \begin{acks}
-  The author would like to thank Professor Rui Henriques for the available course materials, which were the basis of this eassy, and also for the guidance and suggestions.
+  The author would like to thank Professor Rui Henriques for the available course materials, which were the basis of this essay, and also for the guidance and suggestions.
 
 \end{acks}
