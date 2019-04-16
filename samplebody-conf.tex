@@ -9,7 +9,39 @@ outcome improves a player’s utility without making someone else worse off \cit
 \subsection{Deception Mechanisms}
 Deception is often used by humans to raise the probability of success when negotiating. The ability of an agent to negotiate efficiently in the presence of conflicting goals is related with the information that the adversary holds. 
 
-Let us assume an encounter between two competing agents, with the possibility of them to use the following deception mechanisms \textit{i.} hidden actions, \textit{ii.} hidden utilities and \textit{iii.} decoy actions. Deception techniques can occur on inter-agent negotiation with incomplete information, as negotiation typically assume trustworthy agents, which is not always the case \cite{inproceedingsa}. Let us assume a bi-matrix \textit{b}, where \textit{agent i} and \textit{agent j} have different goals, g$_i$ and g$_j$, respectively. Both agents want to transform the world from the initial to a state \textit{s$_i$} or \textit{s$_j$} that satisfies its goal. As agents co-exist and might interfeer 
+Let us assume an encounter between two competing agents, with the possibility of them to use the following deception mechanisms \textit{i.} hidden actions, \textit{ii.} hidden utilities and \textit{iii.} decoy actions. Deception techniques can occur on inter-agent negotiation with incomplete information, as negotiation typically assume trustworthy agents, which is not always the case \cite{inproceedingsa}. As agents co-exist and might interfere with the outcomes of the actions performed, there is the possibility of cooperation, to help each other and achieve both goals with a lower overall cost. Conversely, agents may compete i.e., trying to apply a dominant strategy. Let us assume a bi-matrix \textit{b}, where \textit{agent i} and \textit{agent j} have different goals, g$_i$ and g$_j$, respectively. Both agents want to transform the world from the initial to a state \textit{s$_i$} or \textit{s$_j$} that satisfies its goal. \textit{Agent$_i$} is the row player, and \textit{agent$_j$} the column player. Both players can perform the same actions, \textit{A} and \textit{B}. Deception techniques can be used to maximise the overall utility for one of the agents. Let us admit a game between those agents, with the utilities expressed on the following table:
+
+\begin{game}{2}{2}
+      & $A$     & $B$\\
+$A$   & $3,3$  & $0,2$\\
+$B$   & $2,0$   & $1,1$
+\end{game}
+
+Let us suppose that \textit{agent$_i$} knows that \textit{agent$_j$} is going to perform action a. The result yields:
+
+\begin{game}{2}{1}
+      & $A$ \\
+$A$   & $\textbf{3},3$ \\
+$B$   & $\textbf{2},0$  
+\end{game}
+
+In this case, agent i should also perform action a, because 3 is greater than 2. If  But if agent j is taking action B, we have:
+
+\begin{game}{2}{1}
+      & $B$ \\
+$A$   & $\textbf{0},2$ \\
+$B$   & $\textbf{1},1$  
+\end{game}
+
+%hidden action
+Therefore, agent i would also choose action B, as 1 is greater than 0. The optimal strategy of agent i is determined by agent j\'s choice. Agent j can inform agent i that he can only take action B (\textit{hidden actions}). This deception mechanism leads agent i to perform action B (as 1 is greater than 0). Nonetheless, agent j can perform action A, yielding utility 3 for him and utility 0 for agent i. 
+ With these restrictions, there is no strictly dominant strategy and, therefore, more rules are needed to solve the game. Hidden utility mechanisms are loosely similar to hidden actions. If an agent i does not share its utility associated with each actions, agent j will be picking actions only guided by its utility. Such decisions can lead to sub-optimal options, for instance, when agent j picks action A (utility 3) and agent i picks action B (utility 2 for itself and utility 0 for agent i). 
+ 
+ 
+ Nash equilibrium is a set of strategies for each player, such as each player does not have an incentive to unilaterarly change its own strategy \cite{rh}. Nash equilibria are stable and can help solve the game. In this example there are two nash equilibria: when both agents pick the same action.
+ 
+ %decoy actions
+Let us now suppose that agent j can only perform \textit{action A}, but is using a \textit{decoy action} mechanism, pretending that he can perform \textit{action B}. Cooperative agents rationally always choose action A, as it nash equilibrium and therefore yields the highest outcome possible. Nonetheless, if agent i is a competing agent that not only aims to maximise its utility, but also aims to minimize its adversary utility (zero-sum game), 
 
 \section{Conclusions}
 This paragraph will end the body of this sample document.
@@ -25,57 +57,8 @@ examples only.
 
 
 
-\appendix
-%Appendix A
-\section{Headings in Appendices}
-The rules about hierarchical headings discussed above for
-the body of the article are different in the appendices.
-In the \textbf{appendix} environment, the command
-\textbf{section} is used to
-indicate the start of each Appendix, with alphabetic order
-designation (i.e., the first is A, the second B, etc.) and
-a title (if you include one).  So, if you need
-hierarchical structure
-\textit{within} an Appendix, start with \textbf{subsection} as the
-highest level. Here is an outline of the body of this
-document in Appendix-appropriate form:
-\subsection{Introduction}
-\subsection{The Body of the Paper}
-\subsubsection{Type Changes and  Special Characters}
-\subsubsection{Math Equations}
-\paragraph{Inline (In-text) Equations}
-\paragraph{Display Equations}
-\subsubsection{Citations}
-\subsubsection{Tables}
-\subsubsection{Figures}
-\subsubsection{Theorem-like Constructs}
-\subsubsection*{A Caveat for the \TeX\ Expert}
-\subsection{Conclusions}
-\subsection{References}
-Generated by bibtex from your \texttt{.bib} file.  Run latex,
-then bibtex, then latex twice (to resolve references)
-to create the \texttt{.bbl} file.  Insert that \texttt{.bbl}
-file into the \texttt{.tex} source file and comment out
-the command \texttt{{\char'134}thebibliography}.
-% This next section command marks the start of
-% Appendix B, and does not continue the present hierarchy
-\section{More Help for the Hardy}
-
-Of course, reading the source code is always useful.  The file
-\path{acmart.pdf} contains both the user guide and the commented
-code.
 
 \begin{acks}
-  The authors would like to thank Dr. Yuhua Li for providing the
-  matlab code of  the \textit{BEPS} method. 
-
-  The authors would also like to thank the anonymous referees for
-  their valuable comments and helpful suggestions. The work is
-  supported by the \grantsponsor{GS501100001809}{National Natural
-    Science Foundation of
-    China}{http://dx.doi.org/10.13039/501100001809} under Grant
-  No.:~\grantnum{GS501100001809}{61273304}
-  and~\grantnum[http://www.nnsf.cn/youngscientsts]{GS501100001809}{Young
-    Scientsts' Support Program}.
+  The author would like to thank Professor Rui Henriques for the available course materials, which were the basis of this work, and also for the guidance and suggestions concerning this work. 
 
 \end{acks}
